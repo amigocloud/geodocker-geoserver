@@ -1,7 +1,7 @@
 BASE := $(subst -, ,$(notdir ${CURDIR}))
 ORG  := $(word 1, ${BASE})
 REPO := $(word 2, ${BASE})
-IMG  := quay.io/${ORG}/${REPO}
+IMG  := geoserver_amigo
 GEOMESA_VERSION := 1.2.5
 GEOMESA_DIST_TARBALL := geomesa-dist-${GEOMESA_VERSION}-bin.tar.gz
 GEOMESA_RUNTIME := geomesa-accumulo-distributed-runtime-${GEOMESA_VERSION}.jar
