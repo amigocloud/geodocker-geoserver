@@ -52,6 +52,8 @@ RUN set -x \
   && chgrp root /opt/tomcat/webapps/geoserver/WEB-INF/lib/*
 
 COPY server.xml /opt/tomcat/conf/server.xml
-VOLUME ["/opt/tomcat/webapps/geoserver/data"]
+# VOLUME ["/opt/tomcat/webapps/geoserver/data"]
+VOLUME [geoserver_data_volume:/opt/tomcat/webapps/geoserver/data"]
+VOLUME ["/home/victor:/mnt"]
 EXPOSE 9090
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
