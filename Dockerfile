@@ -5,7 +5,7 @@ ENV GEOSERVER_VERSION 2.9.0
 ENV GEOMESA_VERSION 1.2.5
 ENV GEOWAVE_VERSION 0.9.3
 ENV TOMCAT_VERSION 8.0.35
-ENV CATALINA_OPTS "-Xmx64g -XX:MaxPermSize=2g -Duser.timezone=UTC -server -Djava.awt.headless=true"
+ENV CATALINA_OPTS "-Xmx32g -XX:MaxPermSize=2g -Duser.timezone=UTC -server -Djava.awt.headless=true"
 
 # Install tomcat
 RUN set -x \
@@ -53,5 +53,5 @@ RUN set -x \
 
 COPY server.xml /opt/tomcat/conf/server.xml
 # VOLUME ["/opt/tomcat/webapps/geoserver/data"]
-EXPOSE 9090
+#EXPOSE 9090
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
